@@ -51,11 +51,26 @@ function App() {
               <Route path="*" element={<NotFound />} />
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route path="/forgot" element={<Forgot />} />
-              <Route path="/reset" element={<Reset />} />
+              <Route
+                path="/login"
+                element={<Login setMessage={setMessageWithType} />}
+              />
+              <Route
+                path="/register"
+                element={<Register setMessage={setMessageWithType} />}
+              />
+              <Route
+                path="/logout"
+                element={<Logout setMessage={setMessageWithType} />}
+              />
+              <Route
+                path="/forgot"
+                element={<ForgotPassword setMessage={setMessageWithType} />}
+              />
+              <Route
+                path="/reset"
+                element={<Reset setMessage={setMessageWithType} />}
+              />
             </Routes>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 function Login(props) {
   const { setMessage } = props;
   const { checkAuthStatus } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();

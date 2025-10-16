@@ -108,7 +108,7 @@ async function registerUser(email, password) {
   return result;
 }
 
-async function loginUser(email, password, res, res) {
+async function loginUser(email, password, res, req) {
   const [existingUsers] = await pool
     .promise()
     .execute("SELECT * FROM users WHERE email = ?", [email]);
@@ -133,9 +133,9 @@ async function loginUser(email, password, res, res) {
 
 async function isLoggedIn(req, res) {
   if (req.session && req.session.userId) {
-    res.status(200).json({ loggedin: true, userId: req.session.userId });
+    res.status(200).json({ loggedIn: true, userId: req.session.userId });
   } else {
-    res.status(200).json({ loggedin: false });
+    res.status(200).json({ loggedIn: false });
   }
 }
 

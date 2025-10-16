@@ -7,12 +7,12 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const checkAuthStatus = () => {
-    return fetch("api/authcheck", {
+    return fetch("/api/authcheck", {
       method: "POST",
       credentials: "include",
     })
       .then((res) => res.json())
-      .then((data) => setIsLoggedIn(data.loggenIn))
+      .then((data) => setIsLoggedIn(data.loggedIn))
       .catch(() => setIsLoggedIn(false));
   };
 
